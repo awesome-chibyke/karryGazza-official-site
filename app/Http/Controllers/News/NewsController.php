@@ -47,7 +47,8 @@ class NewsController extends Controller
      */
     public function create()
     {
-        return view('/logged.create_news');
+        $category = $this->category::orderBy('id', 'desc')->get();
+        return view('/logged.create_news', ['categories'=>$category]);
     }
 
     /**
