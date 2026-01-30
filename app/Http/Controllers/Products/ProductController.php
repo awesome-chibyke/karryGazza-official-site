@@ -49,7 +49,7 @@ class ProductController extends Controller
         $allCategory = $this->category::orderBy('id', 'desc')->get();
 
         //return to view
-        return view('logged.add_product', ['all_category'=>$allCategory]);
+        return view('logged.add_product', ['all_category'=>$allCategory, 'categories'=>$allCategory]);
     }
 
     /**

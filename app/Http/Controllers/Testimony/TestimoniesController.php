@@ -2,19 +2,23 @@
 
 namespace App\Http\Controllers\Testimony;
 
-use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
-use App\Models\Testimony;
+use App\Models\Category;
 use App\Traits\Generics;
+use App\Models\Testimony;
+use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Redirect;
 
 
 class TestimoniesController extends Controller
 {
     public $testimony;
-    
-    function __construct(Testimony $testimony){
+    public $category;
+
+    function __construct(Testimony $testimony, Category $category){
         $this->testimony = $testimony;
+
+        $this->category = $category::orderBy('id', 'desc')->get();
     }
     /**
      * Display a listing of the resource.
@@ -25,7 +29,7 @@ class TestimoniesController extends Controller
     public function index()
     {
         $all_testimonies = $this->testimony::orderBy('id', 'desc')->get();
-        return view('/user.testimony', ['all_testimonies'=> $all_testimonies]);
+        return view('/user.testimony', ['all_testimonies'=> $all_testimonies, 'categories'=>$this->category]);
     }
 
     /**
@@ -36,7 +40,7 @@ class TestimoniesController extends Controller
     public function create()
     {
         $testimony = $this->testimony::first();
-        return view('/user.create_testimony', ['testtimony'=> $testimony]);
+        return view('/user.create_testimony', ['testtimony'=> $testimony, 'categories'=>$this->category]);
     }
 
     /**

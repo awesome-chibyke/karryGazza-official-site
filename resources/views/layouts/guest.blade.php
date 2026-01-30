@@ -11,8 +11,8 @@
         <link rel="preconnect" href="https://fonts.bunny.net">
         <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
 
-        <link href="{{ asset("custom_assets/images/purple-logo.png") }}" rel="icon">
-        <link href="{{ asset("custom_assets/images/purple-logo.png") }}" rel="apple-touch-icon">
+        <link href="{{ asset("custom_assets/images/favicon_image.png") }}" rel="icon">
+        <link href="{{ asset("custom_assets/images/favicon_image.png") }}" rel="apple-touch-icon">
 
         <!-- Scripts -->
         @vite(['resources/css/app.css', 'resources/js/app.js'])
@@ -22,12 +22,14 @@
             <div style="width: 150px;">
                 <a href="/">
                     {{-- <x-application-logo class="w-20 h-20 fill-current text-gray-500" /> --}}
-                    <img style="width:100%" src="{{ asset("custom_assets/images/post-ville-purple.png") }}" />
+                    <img style="width:100%" src="{{ asset("custom_assets/images/karry_gaza_2.png") }}" />
                 </a>
             </div>
 
             <div class="w-full sm:max-w-md mt-6 px-6 py-4 bg-white shadow-md overflow-hidden sm:rounded-lg">
-                {{ $slot }}
+                <div class="ml-4 mr-4">
+                    {{ $slot }}
+                </div>
             </div>
         </div>
     </body>

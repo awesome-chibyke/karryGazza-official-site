@@ -126,9 +126,9 @@
                 <li><a href="/create_testimony">Add Testimony</a></li>
                 <li><a href="/all_news">View News</a></li>
                 <li><a href="/create_news">Add News</a></li>
-                <li><a href="/edit_career">Edit Career Page</a></li>
-                <li><a href="/create_available_careers">Add Available Careers</a></li>
-                <li><a href="/create_cooperategovernance">Create CoOperate Governance</a></li>
+                {{-- <li><a href="/edit_career">Edit Career Page</a></li> --}}
+                {{-- <li><a href="/create_available_careers">Add Available Careers</a></li> --}}
+                {{-- <li><a href="/create_cooperategovernance">Create CoOperate Governance</a></li> --}}
 
                 {{-- <li class="dropdown"><a href="#"><span>Deep Drop Down</span> <i class="bi bi-chevron-right"></i></a>
                     <ul>

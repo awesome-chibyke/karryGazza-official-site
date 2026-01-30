@@ -121,6 +121,19 @@ Route::post('/update_settings', [SettingsController::class, 'store'])->name('upd
 //routes for products
 Route::middleware(HandleAuth::class)->group(function () {
 
+    // this rroute is for showing all the partners logos
+    Route::get('/partners', [PartnersController::class, 'index'])->name('partners_logo');
+    //this route is for creating a new partner
+    Route::get('/create_partner', [PartnersController::class, 'create'])->name('create_partner');
+    //this creates a new partner
+    Route::post('/create_new_partner', [PartnersController::class, 'store'])->name('create_new_partner');
+    //this route edits the partner
+    Route::get('/edit_partner/{uniqueID}',[PartnersController::class, 'edit'])->name('edit_partner');
+    //this route is for updating a partner
+    Route::post('/update_partner', [PartnersController::class, 'update'])->name('update_partner');
+    //this is for deleting a partner
+    Route::get('/delete_partner/{uniqueId}', [PartnersController:: class, 'destroy'])->name('delete_partner');
+
     Route::get('/add_product', [ProductController::class, 'create'])->name('add_product');
     //insert the product to the b
     Route::post('/store_product', [ProductController::class, 'store'])->name('store_product');

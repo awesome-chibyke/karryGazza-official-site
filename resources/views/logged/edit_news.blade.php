@@ -57,7 +57,7 @@
 
                 <div class="col-md-12 form-group" style="margin-top:20px;">
                   @if($newsToEdit->image !== null)
-                      @php $imageName = asset('storage/images/'.$newsToEdit->image) @endphp
+                      @php $imageName = asset('storage/public/images/'.$newsToEdit->image) @endphp
                       <img src="{{ $imageName }}" style="width:100%" />
                   @endif
 

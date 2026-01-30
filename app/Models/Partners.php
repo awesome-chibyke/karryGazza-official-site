@@ -14,7 +14,7 @@ class Partners extends Model
     public $incrementing = false;
     protected $keyType = 'string';
     public $imageSavePath = 'public/images/';
-    public $imageDisplayPath = 'storage/images/';
+    public $imageDisplayPath = 'storage/public/images/';
 
       /**
      * The attributes that are mass assignable.

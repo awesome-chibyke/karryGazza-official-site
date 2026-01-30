@@ -4,6 +4,7 @@ namespace App\Http\Controllers\News;
 
 use App\Models\News;
 use App\Models\NewsTag;
+use App\Models\Category;
 use App\Traits\Generics;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -16,11 +17,13 @@ class NewsController extends Controller
     use Generics;
     public $news;
     public $newsTag;
+    public $category;
 
-    function __construct(News $news, NewsTag $newsTag){
+    function __construct(News $news, NewsTag $newsTag, Category $category){
         // $this->middleware('auth');
         $this->news = $news;
         $this->newsTag = $newsTag;
+        $this->category = $category;
     }
     /**
      * 
@@ -31,7 +34,8 @@ class NewsController extends Controller
     public function index()
     {
         $allNews = $this->news::orderBy('id', 'desc')->get();
-        return view('/logged.news', ['allNews'=> $allNews]);
+        $category = $this->category::orderBy('id', 'desc')->get();
+        return view('/logged.news', ['allNews'=> $allNews, 'categories'=>$category]);
     }
 
    
@@ -132,6 +136,7 @@ class NewsController extends Controller
      */
     public function edit($id)
     {
+    $category = $this->category::orderBy('id', 'desc')->get();
         $newsToEdit = $this->news::where([
             ['unique_id', '=', $id]
         ])->first();
@@ -147,7 +152,7 @@ class NewsController extends Controller
             }
 
             $newsToEdit->tags = $tagArray;
-            return view('/logged.edit_news', ['newsToEdit' => $newsToEdit]);
+            return view('/logged.edit_news', ['newsToEdit' => $newsToEdit, 'categories'=>$category]);
         }
         
     }

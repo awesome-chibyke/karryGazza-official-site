@@ -159,6 +159,33 @@
 
         </div>
 
+        <style>
+
+          .cta-btn-a {
+            font-family: "Poppins", sans-serif;
+            text-transform: uppercase;
+            font-weight: 500;
+            font-size: 14px;
+            letter-spacing: 1px;
+            display: inline-block;
+            padding: 10px 25px;
+            border-radius: 2px;
+            transition: 0.4s;
+            margin: 10px;
+            border-radius: 4px;
+            border: 2px solid #b51031;
+            color: #b51031;
+            background: #fff;
+        }
+
+        </style>
+
+        <div class="row portfolio-container" data-aos="fade-up">
+          <div class="col-lg-12 cta-btn-container text-center">
+            <a class="cta-btn-a align-middle" href="{{ route('products') }}">More</a>
+          </div>
+        </div>
+
         @endif
 
       </div>

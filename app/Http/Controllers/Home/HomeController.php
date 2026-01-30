@@ -103,6 +103,7 @@ class HomeController extends Controller
     }
 
     public function viewSingleNews($uniqueId){
+        $category = $this->category::orderBy('id', 'desc')->get();
         $singleNews = $this->news::where([
             ['unique_id', '=', $uniqueId]
         ])->first();
@@ -111,8 +112,8 @@ class HomeController extends Controller
         if($singleNews === null){
             return redirect::back('/');
         }else{
-            $singleNews->user;
-            return view('layouts.single_news', ['singleNews'=>$singleNews, 'latestNews'=>$latestNews]);
+            // $singleNews->user;
+            return view('layouts.single_news', ['singleNews'=>$singleNews, 'latestNews'=>$latestNews, 'categories'=>$category]);
         }
 
     }

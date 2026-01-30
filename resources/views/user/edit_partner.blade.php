@@ -43,7 +43,7 @@
                     </div>
 
                 <div class="col-md-12 form-group" style="margin-top:20px;">
-                @php $imageName = asset('storage/images/'.$editPartner->image) @endphp
+                @php $imageName = asset('storage/public/images/'.$editPartner->image) @endphp
                   <img src="{{ $imageName }}" style="width:100%" />
                   <small class="text-danger">To upload a new image for this partner select the image in the box below and click the upddate button</small>
                 </div>

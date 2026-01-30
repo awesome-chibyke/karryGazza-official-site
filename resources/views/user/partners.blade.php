@@ -54,8 +54,8 @@
                     <td>{{$count}}</td>
                     <td>
                         <div style="width:100px; cursor:pointer;">
-                            <a href="/storage/images/{{ $partner->image}}" data-gallery="{{ $partner->unique_id }}" class="portfolio-lightbox preview-link" >                    
-                            <img style="width: 100%" src="/storage/images/{{$partner->image}}">
+                            <a href="/storage/public/images/{{ $partner->image}}" data-gallery="{{ $partner->unique_id }}" class="portfolio-lightbox preview-link" >                    
+                            <img style="width: 100%" src="/storage/public/images/{{$partner->image}}">
                             </a>                        
                         </div>
                     </td>
