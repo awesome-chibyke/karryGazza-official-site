@@ -219,9 +219,12 @@
             <h4>Our Services</h4>
             @php $all_the_services = App\Models\Service::orderBy('id', 'desc')->get(); @endphp
             <ul>
+              @php 
               
-                @if (count($categories) > 0)
-                    @foreach ($categories as $category)
+              $categoriess = App\Models\Category::orderBy('id', 'desc')->get()
+              @endphp
+                @if (count($categoriess) > 0)
+                    @foreach ($categoriess as $category)
                         <li><i class="bx bx-chevron-right"></i> <a href="#">{{ $category->category_name }}</a></li>
                     @endforeach
                 @endif
